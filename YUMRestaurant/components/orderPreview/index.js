@@ -28,7 +28,6 @@ const OrderContainer = styled.View`
 const StatusContainer = styled.View`
   flex: 1;
 `
-const
 const OrderPreview = () =>(
   <MainContainer>
     <LeftContainer>
