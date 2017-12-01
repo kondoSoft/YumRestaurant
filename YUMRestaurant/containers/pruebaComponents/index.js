@@ -10,6 +10,7 @@ class Prueba extends Component {
   render(){
     return(
       <MainContainer>
+        <OrderPreview/>
       </MainContainer>
     )
   }

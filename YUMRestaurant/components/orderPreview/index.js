@@ -13,13 +13,13 @@ const RightContainer = styled.View`
 `
 const OrangeText = styled.Text`
   font-size: 20px;
-  color: #FF572;
+  color: #FF5722;
 `
 const GrayText =  styled.Text`
   font-size: 15px;
   color: #C7C7CC;
 `
-const RawText = styled.View`
+const RawText = styled.Text`
   font-size: 20px;
 `
 const OrderContainer = styled.View`
@@ -31,7 +31,11 @@ const StatusContainer = styled.View`
 const OrderPreview = () =>(
   <MainContainer>
     <LeftContainer>
-
+      <OrangeText></OrangeText>
+      <StatusContainer>
+        <GrayText>Estatus</GrayText>
+        <RawText> En Preparacion </RawText>
+      </StatusContainer>
     </LeftContainer>
     <RightContainer></RightContainer>
   </MainContainer>
