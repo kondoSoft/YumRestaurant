@@ -6,73 +6,24 @@ import {
   Platform,
   Dimensions
 } from 'react-native'
-import styled from 'styled-components/native'
+import {
+  ScreenContainer,
+  MenuList,
+  Item,
+  MenuItemLeft,
+  MenuItemRight,
+  Row,
+  Column,
+  MenuImage,
+  Paragraph,
+  SaucerButton,
+  Wrapper
+} from '../../components'
 
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0
 const CONTAINER_HEIGHT = Dimensions.get('window').height - (APPBAR_HEIGHT + STATUSBAR_HEIGHT)
 
-const ScreenContainer = styled.View`
-  width: 100%;
-  height: ${props => props.height ? props.height : null};
-  background-color: #FFF;
-`
-const MenuList = styled.FlatList`
-  width: 100%;
-  padding-top: 10;
-`
-const Item = styled.View`
-  
-`
-const MenuItemLeft = styled.View`
-  flex: ${props => props.flex ? props.flex : 1};
-  padding-top: 3px;
-  padding-bottom: 3px;
-`
-const MenuItemRight = styled.View`
-  flex: ${props => props.flex ? props.flex : 1};
-`
-const Row = styled.View`
-  flex: ${props => props.flex ? props.flex : 1};
-  background-color: ${props => props.bgColor ? props.bgColor : 'transparent'};
-  flex-direction: row;
-  ${props => {
-    if (props.alignCenter) {
-      return `
-        align-items: center;
-        justify-content: space-between;`
-    }
-  }};
-`
-const Column = styled.View`
-  justify-content: ${props => props.justifyCenter ? 'center' : 'flex-start'};
-`
-const MenuImage = styled.Image`
-  width: 90px;
-  height: 90px;
-  border-radius: 45px;
-  border: 2px;
-  border-color: #FF5722;
-`
-const Paragraph = styled.Text`
-  font-size: ${props => props.size ? props.size : 14};
-  ${props => {
-    if (props.color) {
-      return `color: ${props.color};`
-    }
-  }};
-`
-const SaucerButton = styled.TouchableWithoutFeedback`
-  
-`
-const Wrapper = styled.View`
-  width: 90%;
-  flex-direction: row;
-  border-bottom-width: 2px;
-  border-color: #C7C7CC;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-`
 const MenuItem = (props) => {
   const {data} = props
   return (

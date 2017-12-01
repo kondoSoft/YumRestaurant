@@ -1,6 +1,31 @@
-import {MainContainer} from './mainContainer' 
+import {MainContainer} from './mainContainer'
 import OrderPreview from './orderPreview'
-export{
+import {
+  ScreenContainer,
+  MenuList,
+  Item,
+  MenuItemLeft,
+  MenuItemRight,
+  Row,
+  Column,
+  MenuImage,
+  Paragraph,
+  SaucerButton,
+  Wrapper
+} from './restaurantMenu'
+
+export {
   MainContainer,
   OrderPreview,
+  ScreenContainer,
+  MenuList,
+  Item,
+  MenuItemLeft,
+  MenuItemRight,
+  Row,
+  Column,
+  MenuImage,
+  Paragraph,
+  SaucerButton,
+  Wrapper
 }
