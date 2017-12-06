@@ -7,5 +7,5 @@ export {
   Prueba,
   RestaurantMenu,
   OrderReady,
-  EditRestaurant
+  EditRestaurant,
 }
