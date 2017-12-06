@@ -1,5 +1,6 @@
 import {MainContainer} from './mainContainer'
 import OrderPreview from './orderPreview'
+import Input from './input'
 import {
   ScreenContainer,
   MenuList,
@@ -27,5 +28,6 @@ export {
   MenuImage,
   Paragraph,
   SaucerButton,
-  Wrapper
+  Wrapper,
+  Input
 }
