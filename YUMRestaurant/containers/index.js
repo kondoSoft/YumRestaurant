@@ -1,5 +1,11 @@
 import Prueba from './pruebaComponents'
+import RestaurantMenu from './restaurantMenu'
+import OrderReady from './orderReady'
+import EditRestaurant from './editRestaurant'
 
-export{
-  Prueba
+export {
+  Prueba,
+  RestaurantMenu,
+  OrderReady,
+  EditRestaurant
 }
