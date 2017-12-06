@@ -51,6 +51,14 @@ export const Row = styled.View`
       return `padding: 10px 5px;`
     }
   }};
+  ${props => {
+    if (props.alignCenterJustify) {
+      return `
+        align-items: center;
+        justify-content: center;
+      `
+    }
+  }};
 `
 export const Column = styled.View`
   justify-content: ${props => props.justifyCenter ? 'center' : 'flex-start'};
