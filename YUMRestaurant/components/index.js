@@ -2,7 +2,9 @@ import {MainContainer} from './mainContainer'
 import OrderPreview from './orderPreview'
 import Input from './input'
 import Selector from './selectorButton'
-
+import IconEdit from './IconEdit'
+import Scroll  from './Scroll'
+import Content from './contentContainer'
 import {
   ScreenContainer,
   MenuList,
@@ -33,4 +35,7 @@ export {
   Wrapper,
   Input,
   Selector,
+  IconEdit,
+  Scroll,
+  Content,
 }

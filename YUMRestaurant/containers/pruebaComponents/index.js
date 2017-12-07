@@ -13,6 +13,7 @@ class Prueba extends Component {
       <MainContainer>
         <Selector/>
         <OrderPreview/>
+        <OrderPreview/>
       </MainContainer>
     )
   }
