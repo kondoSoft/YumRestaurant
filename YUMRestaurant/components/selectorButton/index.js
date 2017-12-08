@@ -15,7 +15,7 @@ const LeftButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: ${(props) => props.state ==='recients' ? '#FF5722' :'#fff' };
+  background-color: ${(props) => props.state ==='recients' ? '#fff' :'#FF5722' };
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 `
@@ -24,38 +24,29 @@ const RightButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: ${(props) => props.state ==='inProcess' ? '#FF5722' :'#fff' };
+  background-color: ${(props) => props.state ==='inProcess' ? '#fff' :'#FF5722' };
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 `
 const Text = styled.Text`
-  color: ${(props) => props.color ?  props.color : '#fff' };
+  color: ${(props) => props.color ?  props.color : '#FF5722' };
 
 `
 class Selector extends Component {
-  constructor() {
-    super()
-    this.state = {
-      actualSelect : 'recients',
-    }
-    this.ChangeSelect= this.ChangeSelect.bind(this)
+  constructor(props) {
+    super(props)
   }
   render(){
     return(
       <MainContainer>
-        <LeftButton  state={this.state.actualSelect} onPress={()=> this.ChangeSelect('recients')}>
-          <Text color = {this.state.actualSelect === 'recients' ? '#FFF': '#FF5722' } >RECIENTES</Text>
+        <LeftButton  state={this.props.state} onPress={()=> this.props.change('recients')}>
+          <Text color = {this.props.state === 'recients' ? '#FF5722': '#fff' } >RECIENTES</Text>
         </LeftButton>
-        <RightButton state={this.state.actualSelect} onPress={()=> this.ChangeSelect('inProcess')} >
-          <Text color = {this.state.actualSelect === 'inProcess' ? '#FFF': '#FF5722' } >EN PROCESO</Text>
+        <RightButton state={this.props.state} onPress={()=> this.props.change('inProcess')} >
+          <Text color = {this.props.state === 'inProcess' ? '#FF5722': '#fff' } >EN PROCESO</Text>
         </RightButton>
       </MainContainer>
     )
-  }
-  ChangeSelect(select){
-    let state = this.state
-    state.actualSelect = select
-    this.setState(state)
   }
 }
 export default Selector

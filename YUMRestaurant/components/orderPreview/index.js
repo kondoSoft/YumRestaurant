@@ -28,7 +28,7 @@ const OrangeText = styled.Text`
 const GrayText =  styled.Text`
   font-size: 15px;
   color: #C7C7CC;
-  margin-left:  ${props => props.margin ? '35px' : '0'};
+  margin-left:  ${props => props.margin ? '15px' : '0'};
 `
 const RawText = styled.Text`
   font-size: 15px;
@@ -65,34 +65,40 @@ const Button = styled.TouchableOpacity`
   justify-content: flex-start;
   align-items: center;
 `
+var Icon = ''
 class OrderPreview extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+    this.state = {}
+    this.ChangeState =  this.ChangeState.bind(this)
+
   }
+
   render(){
+    this.ChangeState()
     return(
       <MainContainer>
         <LeftContainer>
           <TopContent>
             <IconEdit
-              name = {'ticket'}
+              name = {Icon}
               color = '#F7BA00'
             />
-            <OrangeText>#368</OrangeText>
+            <OrangeText>{this.state.order.number}</OrangeText>
           </TopContent>
-          <GrayText> hace 01 min</GrayText>
+          <GrayText>{this.state.order.status}</GrayText>
           <BottomContent></BottomContent>
         </LeftContainer>
         <CenterContainer>
           <OrderContainer>
-            <RawText>02  Tostadas de pollo</RawText>
+            <RawText>{this.state.order.items.food1.quantity + '  ' + this.state.order.items.food1.food}</RawText>
             <GrayText margin>Sin cebolla</GrayText>
           </OrderContainer>
           <OrderContainer>
-            <RawText>01  Milanesa de res</RawText>
+            <RawText>{this.state.order.items.food2.quantity + '  ' + this.state.order.items.food2.food}</RawText>
           </OrderContainer>
           <OrderContainer>
-            <RawText>02  Horchata 500 ml.</RawText>
+            <RawText>{this.state.order.items.food3.quantity + '  ' + this.state.order.items.food3.food}</RawText>
           </OrderContainer>
         </CenterContainer>
         <RightContainer>
@@ -105,6 +111,20 @@ class OrderPreview extends Component {
         </RightContainer>
       </MainContainer>
     )
+  }
+  ChangeState(){
+    if (this.props.state.actualSelect === 'recients') {
+      this.state = this.props.state.recients
+      Icon = 'ticket'
+    }
+    else {
+      this.state = this.props.state.inProcess
+      if (this.props.state.inProcess.order.status === 'En preparacion') {Icon = 'fire'}
+      else if (this.props.state.onProcess.order.status === 'Listo para entrega') {Icon = 'cutlery'}
+      else if (this.props.state.onProcess.order.status === 'Entregado') {Icon = 'motorcycle'}
+
+    }
+
   }
 }
 export default OrderPreview
