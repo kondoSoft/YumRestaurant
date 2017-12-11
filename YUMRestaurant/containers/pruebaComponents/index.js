@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {
   OrderPreview,
-  MainContainer
+  MainContainer,
+  Selector,
 } from '../../components'
 class Prueba extends Component {
   constructor() {
@@ -10,6 +11,9 @@ class Prueba extends Component {
   render(){
     return(
       <MainContainer>
+        <Selector/>
+        <OrderPreview/>
+        <OrderPreview/>
       </MainContainer>
     )
   }
